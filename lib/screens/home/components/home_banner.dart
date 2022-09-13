@@ -16,7 +16,7 @@ class HomeBanner extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/images/bg.jpeg',
+            'assets/images/madeira.jpg',
             fit: BoxFit.cover,
           ),
           ColoredBox(color: darkColor.withOpacity(0.66)),
