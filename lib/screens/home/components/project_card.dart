@@ -14,8 +14,19 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration:  BoxDecoration(
+        color: secondaryColor,
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withOpacity(.13),
+            spreadRadius: 3,
+            blurRadius: 10,
+            // offset: const Offset(3,3),
+          )
+        ],
+      ),
       padding: const EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
+      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -25,14 +36,14 @@ class ProjectCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.subtitle2,
           ),
-          const Spacer(),
+          const SizedBox(height: defaultPadding),
           Text(
             project.description!,
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),
           ),
-          const Spacer(),
+          const SizedBox(height: defaultPadding),
           TextButton(
             onPressed: () {},
             child: const Text(

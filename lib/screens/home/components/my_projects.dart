@@ -3,6 +3,7 @@ import 'package:corey_portfolio/models/project.dart';
 import 'package:corey_portfolio/responsive.dart';
 import 'package:corey_portfolio/screens/home/components/project_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyProjects extends StatelessWidget {
   const MyProjects({
@@ -20,15 +21,36 @@ class MyProjects extends StatelessWidget {
         ),
         const SizedBox(height: defaultPadding),
         const Responsive(
-          mobile: ProjectsGridView(
-            crossAxisCount: 1,
-            childAspectRatio: 1.7,
-          ),
-          mobileLarge: ProjectsGridView(crossAxisCount: 2),
-          tablet: ProjectsGridView(childAspectRatio: 1.1),
-          desktop: ProjectsGridView(),
-        )
+          mobile: StaggeredProjectGridView(crossAxisCount: 1),
+          mobileLarge: StaggeredProjectGridView(crossAxisCount: 2),
+          tablet: StaggeredProjectGridView(crossAxisCount: 4),
+          desktop: StaggeredProjectGridView(crossAxisCount: 4),
+        ),
+        
       ],
+    );
+  }
+}
+
+class StaggeredProjectGridView extends StatelessWidget {
+  const StaggeredProjectGridView({
+    required this.crossAxisCount,
+    super.key,
+  });
+
+  final int crossAxisCount;
+
+  @override
+  Widget build(BuildContext context) {
+    return MasonryGridView.count(
+      shrinkWrap: true,
+      crossAxisCount: crossAxisCount,
+      mainAxisSpacing: defaultPadding,
+      crossAxisSpacing: defaultPadding,
+      itemCount: 4,
+      itemBuilder: (context, index) => ProjectCard(
+        project: demoProjects[index],
+      ),
     );
   }
 }
