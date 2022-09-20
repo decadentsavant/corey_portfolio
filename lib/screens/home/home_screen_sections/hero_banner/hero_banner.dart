@@ -1,10 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:corey_portfolio/constants.dart';
-import 'package:corey_portfolio/responsive.dart';
+import 'package:corey_portfolio/global_layout/responsive.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
 
-class HomeBanner extends StatelessWidget {
-  const HomeBanner({
+class HeroBanner extends StatelessWidget {
+  const HeroBanner({
     super.key,
   });
 
@@ -19,7 +19,7 @@ class HomeBanner extends StatelessWidget {
             'assets/images/madeira.jpg',
             fit: BoxFit.cover,
           ),
-          ColoredBox(color: darkColor.withOpacity(0.66)),
+          ColoredBox(color: darkColor.withOpacity(0.26)),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Column(
@@ -27,7 +27,7 @@ class HomeBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Discover my Amazing \nArt Space!',
+                  'Looking forward to a career in software!',
                   style: Responsive.isDesktop(context)
                       ? Theme.of(context).textTheme.headline3!.copyWith(
                             fontWeight: FontWeight.bold,
@@ -40,7 +40,7 @@ class HomeBanner extends StatelessWidget {
                 ),
                 if (Responsive.isMobileLarge(context))
                   const SizedBox(height: defaultPadding / 2),
-                const MyBuildAnimatedText(),
+                // const MyBuildAnimatedText(),
                 const SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
@@ -53,7 +53,7 @@ class HomeBanner extends StatelessWidget {
                       backgroundColor: primaryColor,
                     ),
                     child: const Text(
-                      'EXPLORE NOW',
+                      'Take a Guided Tour!',
                       style: TextStyle(color: darkColor),
                     ),
                   ),

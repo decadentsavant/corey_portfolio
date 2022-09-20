@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyInfo extends StatelessWidget {
-  const MyInfo({
+class SideMenuHero extends StatelessWidget {
+  const SideMenuHero({
     super.key,
   });
 
@@ -20,11 +20,11 @@ class MyInfo extends StatelessWidget {
             ),
             const Spacer(),
             Text(
-              'Abu Anwar',
+              'Corey Stewart',
               style: Theme.of(context).textTheme.subtitle2,
             ),
             const Text(
-              'Flutter Developer & Founder of \n The Flutter Way',
+              'Flutter Developer',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.w200,

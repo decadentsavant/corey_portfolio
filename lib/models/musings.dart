@@ -1,31 +1,30 @@
 // ignore_for_file: lines_longer_than_80_chars
 
-class Recommendation {
-
-  Recommendation({this.name, this.source, this.text});
+class WritingData {
+  WritingData({this.name, this.source, this.text});
   final String? name, source, text;
 }
 
-final List<Recommendation> demoRecommendations = [
-  Recommendation(
-    name: 'Kolapo Obanewa',
+final List<WritingData> writingData = [
+  WritingData(
+    name: 'Kolapo Obanewaasdf',
     source: 'Linkedin',
     text:
         'I have had the pleasure of working with Anwar on two flutter projects and what strikes me the most about his work is his ability to write clean and reusable codes with best practices. He is hardworking and makes it so easy to transcribe ideas into beautiful and testable flutter apps. He is a Flutter/Dart gem and has my highest recommendation',
   ),
-  Recommendation(
+  WritingData(
     name: 'Reza Shahbazi',
     source: 'Linkedin',
     text:
         "Abu is great asset for any organization. It's a true pleasure working with him at TakeIn. His flutter skill is amazing as well as his professionalism and being a good team player. Abu's problem solving skill is also one of his great skills.",
   ),
-  Recommendation(
+  WritingData(
     name: 'Diadem',
     source: 'YouTube',
     text:
         'I like your way you doing your project and you taught us. After I watch this I like and hit the subscribe button and then watch your video playlist one by one!! Within three hours, I learned a lot! I share your channel in my college WhatsApp group!',
   ),
-  Recommendation(
+  WritingData(
     name: 'Roshan Shetty',
     source: 'YouTube',
     text:

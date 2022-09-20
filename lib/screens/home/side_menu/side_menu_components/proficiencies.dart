@@ -1,9 +1,8 @@
-import 'package:corey_portfolio/constants.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class Knowledges extends StatelessWidget {
-  const Knowledges({
+class Proficiencies extends StatelessWidget {
+  const Proficiencies({
     super.key,
   });
 
@@ -12,26 +11,27 @@ class Knowledges extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Divider(),
         Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: defaultPadding,),
+          padding: const EdgeInsets.only(
+            bottom: defaultPadding,
+          ),
           child: Text(
-            'Knowledges',
+            'Proficiencies',
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        const KnowledgeText(text: 'Flutter, Dart'),
-        const KnowledgeText(text: 'Stylus, Sass, Less'),
-        const KnowledgeText(text: 'Gulp, Webpack, Grunt'),
-        const KnowledgeText(text: 'GIT Knowledge'),
+        const ProficiencyItem(text: 'Flutter, Dart'),
+        const ProficiencyItem(text: 'Firebase, MongoDB'),
+        const ProficiencyItem(text: 'Git, GitHub'),
+        const ProficiencyItem(text: 'Visual Studio Code'),
+        const ProficiencyItem(text: 'CLI'),
       ],
     );
   }
 }
 
-class KnowledgeText extends StatelessWidget {
-  const KnowledgeText({
+class ProficiencyItem extends StatelessWidget {
+  const ProficiencyItem({
     super.key,
     required this.text,
   });
@@ -44,7 +44,7 @@ class KnowledgeText extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: defaultPadding / 2),
       child: Row(
         children: [
-          SvgPicture.asset('assets/icons/check.svg'),
+          Icon(Icons.hotel_class, size: IconTheme.of(context).size! * .8,),
           const SizedBox(width: defaultPadding / 2),
           Text(text),
         ],

@@ -1,10 +1,10 @@
-import 'package:corey_portfolio/constants.dart';
-import 'package:corey_portfolio/responsive.dart';
-import 'package:corey_portfolio/screens/main/components/side_menu.dart';
+import 'package:corey_portfolio/global_layout/responsive.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/screens/home/side_menu/side_menu.dart';
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key, required this.children});
+class HomeSkeleton extends StatelessWidget {
+  const HomeSkeleton({super.key, required this.children});
 
   final List<Widget> children;
 

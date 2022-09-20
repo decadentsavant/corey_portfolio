@@ -1,4 +1,4 @@
-import 'package:corey_portfolio/constants.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedCircularProgressIndicator extends StatelessWidget {

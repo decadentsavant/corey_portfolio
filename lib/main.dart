@@ -1,4 +1,4 @@
-import 'package:corey_portfolio/constants.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Corey Portfolio',
       // we are using dark theme and we modify it as our need
       theme: ThemeData.dark().copyWith(
         primaryColor: primaryColor,

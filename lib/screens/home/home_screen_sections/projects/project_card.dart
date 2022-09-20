@@ -1,6 +1,6 @@
-import 'package:corey_portfolio/constants.dart';
+import 'package:corey_portfolio/global_layout/responsive.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/models/project.dart';
-import 'package:corey_portfolio/responsive.dart';
 import 'package:flutter/material.dart';
 
 class ProjectCard extends StatelessWidget {

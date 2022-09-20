@@ -1,14 +1,14 @@
-import 'package:corey_portfolio/constants.dart';
-import 'package:corey_portfolio/models/recommendation.dart';
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/models/models.dart';
 import 'package:flutter/material.dart';
 
-class RecommendationCard extends StatelessWidget {
-  const RecommendationCard({
+class MusingsCard extends StatelessWidget {
+  const MusingsCard({
     super.key,
-    required this.recommendation,
+    required this.musings,
   });
 
-  final Recommendation recommendation;
+  final WritingData musings;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,13 @@ class RecommendationCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            recommendation.name!,
+            musings.name!,
             style: Theme.of(context).textTheme.subtitle2,
           ),
-          Text(recommendation.source!),
+          Text(musings.source!),
           const SizedBox(height: defaultPadding),
           Text(
-            recommendation.text!,
+            musings.text!,
             maxLines: 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),

@@ -1,8 +1,7 @@
-import 'package:corey_portfolio/screens/home/components/heighlights.dart';
-import 'package:corey_portfolio/screens/home/components/home_banner.dart';
-import 'package:corey_portfolio/screens/home/components/my_projects.dart';
-import 'package:corey_portfolio/screens/home/components/recommendations.dart';
-import 'package:corey_portfolio/screens/main/main_screen.dart';
+import 'package:corey_portfolio/screens/home/home_screen_sections/hero_banner/hero_banner.dart';
+import 'package:corey_portfolio/screens/home/home_screen_sections/projects/my_projects.dart';
+import 'package:corey_portfolio/screens/home/home_screen_sections/publications/writings.dart';
+import 'package:corey_portfolio/screens/home/homle_skeleton.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,12 +9,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MainScreen(
+    return const HomeSkeleton(
       children: [
-        HomeBanner(),
-        HighLightsInfo(),
-        MyProjects(),
-        Recommendations(),
+        HeroBanner(),
+        ProjectsSection(),
+        WritingsSection(),
       ],
     );
   }
