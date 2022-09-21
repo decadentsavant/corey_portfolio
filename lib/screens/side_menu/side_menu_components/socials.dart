@@ -1,7 +1,6 @@
+import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../../global_layout/ui_constants.dart';
 
 
 class Socials extends StatelessWidget {

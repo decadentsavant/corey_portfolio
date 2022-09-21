@@ -1,6 +1,6 @@
 import 'package:corey_portfolio/global_layout/responsive.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
-import 'package:corey_portfolio/screens/home/side_menu/side_menu.dart';
+import 'package:corey_portfolio/screens/side_menu/side_menu_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeSkeleton extends StatelessWidget {

@@ -1,4 +1,5 @@
-import 'package:corey_portfolio/screens/home/home_screen_sections/hero_banner/hero_banner.dart';
+import 'package:corey_portfolio/screens/home/home_screen_sections/hero_banner/hero_banner_stack.dart';
+import 'package:corey_portfolio/screens/home/home_screen_sections/proficiencies/proficiencies.dart';
 import 'package:corey_portfolio/screens/home/home_screen_sections/projects/my_projects.dart';
 import 'package:corey_portfolio/screens/home/home_screen_sections/publications/writings.dart';
 import 'package:corey_portfolio/screens/home/homle_skeleton.dart';
@@ -13,6 +14,7 @@ class HomeScreen extends StatelessWidget {
       children: [
         HeroBanner(),
         ProjectsSection(),
+        Skills(),
         WritingsSection(),
       ],
     );
