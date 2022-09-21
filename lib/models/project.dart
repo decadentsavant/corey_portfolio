@@ -8,9 +8,9 @@ class Project {
 
 List<Project> demoProjects = [
   Project(
-    title: 'Responsive Admin Panel or Dashboard - Flutter UI',
+    title: 'Responsive Portfolio',
     description:
-        'On Flutter V2.* web officially supported on a stable branch. Today I share an Admin panel or you can call it dashboard UI build with flutter. Now you can build your app dashboard using flutter. This dashboard contains almost everything that you need like a chart, table, nice small card for showing info.',
+        'This site! Built for Flutter web, this fun and informative portfolio showcases numerous projects utilizing a dazzling array of technologies.',
   ),
   Project(
     title: 'E-Commerce Complate App - Flutter UI',
