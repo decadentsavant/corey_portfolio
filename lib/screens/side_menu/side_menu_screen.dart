@@ -22,11 +22,16 @@ class SideMenu extends StatelessWidget {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
-                  children: const <Widget> [
-                    ContactInformation(),
-                    SizedBoxAndDivider(),
-                    DownloadCV(),
-                    Socials(),
+                  children: <Widget>[
+                    const ContactInformation(),
+                    const SizedBoxAndDivider(),
+                    const DownloadCV(),
+                    const Socials(),
+                    const SizedBoxAndDivider(),
+                    ElevatedButton(
+                      onPressed: PortfolioColors().toggle,
+                      child: const Text('Toggle Colors'),
+                    ),
                   ],
                 ),
               ),

@@ -15,10 +15,10 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration:  BoxDecoration(
-        color: secondaryColor,
+        color: PortfolioColors().secondaryColor,
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withOpacity(.13),
+            color: PortfolioColors().primaryColor.withOpacity(.13),
             spreadRadius: 3,
             blurRadius: 10,
             // offset: const Offset(3,3),
@@ -46,9 +46,9 @@ class ProjectCard extends StatelessWidget {
           const SizedBox(height: defaultPadding),
           TextButton(
             onPressed: () {},
-            child: const Text(
+            child: Text(
               'Read More >>',
-              style: TextStyle(color: primaryColor),
+              style: TextStyle(color: PortfolioColors().primaryColor),
             ),
           ),
         ],

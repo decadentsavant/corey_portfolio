@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-// We will modify it once we have our final design
-
 class Responsive extends StatelessWidget {
 
   const Responsive({

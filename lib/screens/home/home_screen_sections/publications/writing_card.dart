@@ -15,7 +15,7 @@ class MusingsCard extends StatelessWidget {
     return Container(
       width: 400,
       padding: const EdgeInsets.all(defaultPadding),
-      color: secondaryColor,
+      color: PortfolioColors().secondaryColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

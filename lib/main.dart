@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
       title: 'Corey Portfolio',
       // we are using dark theme and we modify it as our need
       theme: ThemeData.dark().copyWith(
-        primaryColor: primaryColor,
-        scaffoldBackgroundColor: bgColor,
-        canvasColor: bgColor,
+        primaryColor: PortfolioColors().primaryColor,
+        scaffoldBackgroundColor: PortfolioColors().bgColor,
+        canvasColor: PortfolioColors().bgColor,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
             .apply(bodyColor: Colors.white)
             .copyWith(
-              bodyText1: const TextStyle(color: bodyTextColor),
-              bodyText2: const TextStyle(color: bodyTextColor),
+              bodyText1: TextStyle(color: PortfolioColors().bodyTextColor),
+              bodyText2: TextStyle(color: PortfolioColors().bodyTextColor),
             ),
       ),
       home: const HomeScreen(),

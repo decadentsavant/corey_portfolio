@@ -1,10 +1,5 @@
 import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-const defaultPadding = 20.0;
-const defaultDuration = Duration(seconds: 1); // for animations
-const maxWidth = 1440.0; // max width of our web view
+import 'dart:ui';
 
 class PortfolioColors extends ColorOptions {
   PortfolioColors();
@@ -25,8 +20,7 @@ class PortfolioColors extends ColorOptions {
   }
 }
 
-int randomIndexFromList (List<dynamic> list) => Random().nextInt(list.length);
-
+int randomIndexFromList(List<dynamic> list) => Random().nextInt(list.length);
 
 abstract class ColorOptions {
   static const colorOptionsList = <Color>[
