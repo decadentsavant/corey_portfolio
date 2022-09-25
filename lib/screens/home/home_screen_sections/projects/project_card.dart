@@ -1,3 +1,4 @@
+import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/responsive.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/models/project.dart';

@@ -1,18 +1,22 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class PortfolioColors extends ColorOptions {
   PortfolioColors();
 
   Color primaryColor = ColorOptions.autumnYellow;
-  Color secondaryColor = ColorOptions.autumnRed;
-  Color darkColor = ColorOptions.sumiInk0;
-  Color bodyTextColor = ColorOptions.sakuraPink;
+  Color secondaryColor = ColorOptions.autumnGreen;
+  Color darkColor = ColorOptions.fujiGray;
+  Color bodyTextColor = ColorOptions.fujiGray;
   Color bgColor = ColorOptions.winterBlue;
-
+   
   void toggle() {
     const colorList = ColorOptions.colorOptionsList;
+    print('primary before is $primaryColor');
     primaryColor = colorList[randomIndexFromList(colorList)];
+    print('primary after is $primaryColor');
     secondaryColor = colorList[randomIndexFromList(colorList)];
     darkColor = colorList[randomIndexFromList(colorList)];
     bodyTextColor = colorList[randomIndexFromList(colorList)];

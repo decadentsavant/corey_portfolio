@@ -1,3 +1,4 @@
+import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/screens/side_menu/side_menu_components/contact_information.dart';
 import 'package:corey_portfolio/screens/side_menu/side_menu_components/download_cv.dart';
