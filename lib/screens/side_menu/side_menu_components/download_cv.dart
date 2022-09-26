@@ -1,3 +1,6 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
+
 import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +16,7 @@ class DownloadCV extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final colors = ref.watch(portfolioColorsProvider);
     return TextButton(
-      onPressed: () {},
+      onPressed: () => _downloadFile('/lib/global_components/skills.dart'),
       child: FittedBox(
         child: Row(
           children: [
@@ -28,4 +31,10 @@ class DownloadCV extends ConsumerWidget {
       ),
     );
   }
+}
+
+void _downloadFile(String url) {
+  html.AnchorElement(href: url)
+    ..download = url
+    ..click();
 }
