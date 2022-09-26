@@ -26,8 +26,8 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
               children: [
                 CircularProgressIndicator(
                   value: value,
-                  color: PortfolioColors().primaryColor,
-                  backgroundColor: PortfolioColors().darkColor,
+                  color: const PortfolioColors().primaryColor,
+                  backgroundColor: const PortfolioColors().darkColor,
                 ),
                 Center(
                   child: Text(
@@ -83,8 +83,8 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
             const SizedBox(height: defaultPadding / 2),
             LinearProgressIndicator(
               value: value,
-              color: PortfolioColors().primaryColor,
-              backgroundColor: PortfolioColors().darkColor,
+              color: const PortfolioColors().primaryColor,
+              backgroundColor: const PortfolioColors().darkColor,
             ),
           ],
         ),

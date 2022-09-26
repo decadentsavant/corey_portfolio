@@ -1,31 +1,57 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
-
-class PortfolioColors extends ColorOptions {
-  PortfolioColors();
-
-  Color primaryColor = ColorOptions.autumnYellow;
-  Color secondaryColor = ColorOptions.autumnGreen;
-  Color darkColor = ColorOptions.fujiGray;
-  Color bodyTextColor = ColorOptions.fujiGray;
-  Color bgColor = ColorOptions.winterBlue;
-   
-  void toggle() {
-    const colorList = ColorOptions.colorOptionsList;
-    print('primary before is $primaryColor');
-    primaryColor = colorList[randomIndexFromList(colorList)];
-    print('primary after is $primaryColor');
-    secondaryColor = colorList[randomIndexFromList(colorList)];
-    darkColor = colorList[randomIndexFromList(colorList)];
-    bodyTextColor = colorList[randomIndexFromList(colorList)];
-    bgColor = colorList[randomIndexFromList(colorList)];
-  }
-}
+import 'package:flutter/foundation.dart' show immutable;
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 int randomIndexFromList(List<dynamic> list) => Random().nextInt(list.length);
 
+final portfolioColorsProvider =
+    StateNotifierProvider<PortfolioColorsNotifier, PortfolioColors>((ref) {
+  return PortfolioColorsNotifier();
+});
+
+class PortfolioColorsNotifier extends StateNotifier<PortfolioColors> {
+  PortfolioColorsNotifier([
+    PortfolioColors? portfolioColors,
+  ]) : super(portfolioColors ?? const PortfolioColors());
+
+  void toggle() {
+    const colorList = ColorOptions.colorOptionsList;
+    state = PortfolioColors(
+      primaryColor: colorList[randomIndexFromList(colorList)],
+      secondaryColor: colorList[randomIndexFromList(colorList)],
+      darkColor: colorList[randomIndexFromList(colorList)],
+      bodyTextColor: colorList[randomIndexFromList(colorList)],
+      bgColor: colorList[randomIndexFromList(colorList)],
+    );
+  }
+}
+
+/// A read-only description of the PortfolioColors
+@immutable
+class PortfolioColors {
+  const PortfolioColors({
+    this.primaryColor = ColorOptions.autumnYellow,
+    this.secondaryColor = ColorOptions.autumnGreen,
+    this.darkColor = ColorOptions.fujiGray,
+    this.bodyTextColor = ColorOptions.fujiGray,
+    this.bgColor = ColorOptions.winterBlue,
+  });
+
+  final Color primaryColor;
+  final Color secondaryColor;
+  final Color darkColor;
+  final Color bodyTextColor;
+  final Color bgColor;
+
+  @override
+  String toString() {
+    return '''PortfolioColors:\nprimaryColor: $primaryColor,\nsecondaryColor: $secondaryColor,\ndarkColor: $darkColor,\nbodyTextColor: $bodyTextColor, \n bgColor: $bgColor''';
+  }
+}
+
+@immutable
 abstract class ColorOptions {
   static const colorOptionsList = <Color>[
     fujiWhite,

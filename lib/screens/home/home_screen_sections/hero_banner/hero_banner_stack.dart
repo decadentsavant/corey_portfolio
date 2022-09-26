@@ -20,7 +20,9 @@ class HeroBanner extends StatelessWidget {
             'assets/images/madeira.jpg',
             fit: BoxFit.cover,
           ),
-          ColoredBox(color: PortfolioColors().darkColor.withOpacity(0.26)),
+          ColoredBox(
+            color: const PortfolioColors().darkColor.withOpacity(0.26),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
             child: Column(
@@ -51,11 +53,13 @@ class HeroBanner extends StatelessWidget {
                         horizontal: defaultPadding * 2,
                         vertical: defaultPadding,
                       ),
-                      backgroundColor: PortfolioColors().primaryColor,
+                      backgroundColor: const PortfolioColors().primaryColor,
                     ),
                     child: Text(
                       'Take a Guided Tour!',
-                      style: TextStyle(color: PortfolioColors().darkColor),
+                      style: TextStyle(
+                        color: const PortfolioColors().darkColor,
+                      ),
                     ),
                   ),
               ],
@@ -136,7 +140,7 @@ class FlutterCodedText extends StatelessWidget {
         children: [
           TextSpan(
             text: 'flutter',
-            style: TextStyle(color: PortfolioColors().primaryColor),
+            style: TextStyle(color: const PortfolioColors().primaryColor),
           ),
           const TextSpan(text: '>'),
         ],

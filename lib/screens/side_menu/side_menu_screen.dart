@@ -1,4 +1,3 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/screens/side_menu/side_menu_components/contact_information.dart';
 import 'package:corey_portfolio/screens/side_menu/side_menu_components/download_cv.dart';
@@ -23,16 +22,16 @@ class SideMenu extends StatelessWidget {
               child: SingleChildScrollView(
                 padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
-                  children: <Widget>[
-                    const ContactInformation(),
-                    const SizedBoxAndDivider(),
-                    const DownloadCV(),
-                    const Socials(),
-                    const SizedBoxAndDivider(),
-                    ElevatedButton(
-                      onPressed: PortfolioColors().toggle,
-                      child: const Text('Toggle Colors'),
-                    ),
+                  children: const <Widget>[
+                    ContactInformation(),
+                    SizedBoxAndDivider(),
+                    DownloadCV(),
+                    Socials(),
+                    SizedBoxAndDivider(),
+                    // ElevatedButton(
+                    //   onPressed: PortfolioColors().toggle,
+                    //   child: const Text('Toggle Colors'),
+                    // ),
                   ],
                 ),
               ),
