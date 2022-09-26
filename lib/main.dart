@@ -1,5 +1,6 @@
 import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/screens/home/home_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -21,20 +22,35 @@ class MyApp extends ConsumerWidget {
     final colors = ref.watch(portfolioColorsProvider);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown,
+          PointerDeviceKind.trackpad
+        },
+      ),
       title: 'Corey Portfolio',
       // we are using dark theme and we modify it as our need
       theme: ThemeData.dark().copyWith(
-        primaryColor: colors.primaryColor,
+        useMaterial3: true,
+        // main background color
         scaffoldBackgroundColor: colors.bgColor,
+        // drawer background color
         canvasColor: colors.bgColor,
+        // text Colors
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: Colors.white)
+            .apply(bodyColor: colors.bodyTextColor,)
             .copyWith(
-              bodyText1: TextStyle(
-                color: colors.bodyTextColor,
+              headlineLarge: const TextStyle(
+                color: Colors.white,
               ),
-              bodyText2: TextStyle(
-                color: colors.bodyTextColor,
+              headlineMedium: const TextStyle(
+                color: Colors.white,
+              ),
+              headlineSmall: const TextStyle(
+                color: Colors.white,
               ),
             ),
       ),

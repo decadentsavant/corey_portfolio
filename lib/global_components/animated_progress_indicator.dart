@@ -1,4 +1,3 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -26,8 +25,6 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
               children: [
                 CircularProgressIndicator(
                   value: value,
-                  color: const PortfolioColors().primaryColor,
-                  backgroundColor: const PortfolioColors().darkColor,
                 ),
                 Center(
                   child: Text(
@@ -75,7 +72,6 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: const TextStyle(color: Colors.white),
                 ),
                 Text('${(value * 100).toInt()}%'),
               ],
@@ -83,8 +79,6 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
             const SizedBox(height: defaultPadding / 2),
             LinearProgressIndicator(
               value: value,
-              color: const PortfolioColors().primaryColor,
-              backgroundColor: const PortfolioColors().darkColor,
             ),
           ],
         ),

@@ -15,7 +15,7 @@ class SideMenu extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final colors = ref.watch(portfolioColorsProvider);
+    final colors = ref.watch(portfolioColorsProvider);
     return Drawer(
       child: SafeArea(
         child: Column(
@@ -32,11 +32,15 @@ class SideMenu extends ConsumerWidget {
                     const Socials(),
                     const SizedBoxAndDivider(),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: colors.darkColor.withAlpha(50),
+                        foregroundColor: colors.primaryColor,
+                        surfaceTintColor: colors.primaryColor.withAlpha(50),
+                      ),
                       onPressed: () {
                         ref.read(portfolioColorsProvider.notifier).toggle();
-                        ref.read(portfolioColorsProvider).toString();
                       },
-                      child: const Text('Toggle Colors'),
+                      child: const Text('Randomize Colors'),
                     ),
                   ],
                 ),

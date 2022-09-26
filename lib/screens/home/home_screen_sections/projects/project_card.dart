@@ -3,8 +3,9 @@ import 'package:corey_portfolio/global_layout/responsive.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:corey_portfolio/models/project.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ProjectCard extends StatelessWidget {
+class ProjectCard extends ConsumerWidget {
   const ProjectCard({
     super.key,
     required this.project,
@@ -13,21 +14,21 @@ class ProjectCard extends StatelessWidget {
   final Project project;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colors = ref.watch(portfolioColorsProvider);
     return Container(
-      decoration:  BoxDecoration(
-        color: const PortfolioColors().secondaryColor,
+      decoration: BoxDecoration(
+        color: colors.darkColor,
         boxShadow: [
           BoxShadow(
-            color: const PortfolioColors().primaryColor.withOpacity(.13),
-            spreadRadius: 3,
-            blurRadius: 10,
-            // offset: const Offset(3,3),
+            // spreadRadius: 0,
+            blurRadius: 8,
+            offset: const Offset(5, 3),
+            color: colors.primaryColor.withOpacity(.2),
           )
         ],
       ),
       padding: const EdgeInsets.all(defaultPadding),
-      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,7 +36,9 @@ class ProjectCard extends StatelessWidget {
             project.title!,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  color: Colors.white,
+                ),
           ),
           const SizedBox(height: defaultPadding),
           Text(
@@ -49,7 +52,7 @@ class ProjectCard extends StatelessWidget {
             onPressed: () {},
             child: Text(
               'Read More >>',
-              style: TextStyle(color: const PortfolioColors().primaryColor),
+              style: TextStyle(color: colors.primaryColor),
             ),
           ),
         ],

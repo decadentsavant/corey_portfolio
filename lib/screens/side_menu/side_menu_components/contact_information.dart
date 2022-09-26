@@ -12,7 +12,7 @@ class ContactInformation extends StatelessWidget {
           padding: EdgeInsets.only(bottom: defaultPadding / 2),
           child: ContactCard(
             title: 'Locations',
-            text: 'Dallas / Fort Worth & New York City',
+            text: 'Dallas - Fort Worth & New York City',
           ),
         ),
         Padding(
@@ -49,13 +49,20 @@ class ContactCard extends StatelessWidget {
           width: double.infinity,
           child: Text(
             title!,
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(
+              color: Colors.white,
+            ),
           ),
         ),
         const SizedBox(
           height: defaultPadding / 4,
         ),
-        Text(text!),
+        Text(
+          text!,
+          style: const TextStyle(
+            letterSpacing: -.1,
+          ),
+        ),
       ],
     );
   }

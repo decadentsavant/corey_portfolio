@@ -16,7 +16,9 @@ class WritingsSection extends StatelessWidget {
       children: [
         Text(
           'Publications',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.headline6!.copyWith(
+                color: Colors.white,
+              ),
         ),
         const SizedBox(height: defaultPadding / 3),
         Text(
@@ -41,6 +43,7 @@ class StaggeredWritingsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: defaultPadding,

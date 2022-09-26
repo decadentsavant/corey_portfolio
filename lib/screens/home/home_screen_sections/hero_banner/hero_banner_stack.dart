@@ -3,14 +3,16 @@ import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
 import 'package:corey_portfolio/global_layout/responsive.dart';
 import 'package:corey_portfolio/global_layout/ui_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class HeroBanner extends StatelessWidget {
+class HeroBanner extends ConsumerWidget {
   const HeroBanner({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final colors = ref.watch(portfolioColorsProvider);
     return AspectRatio(
       aspectRatio: Responsive.isMobile(context) ? 2.5 : 3,
       child: Stack(
@@ -21,7 +23,7 @@ class HeroBanner extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           ColoredBox(
-            color: const PortfolioColors().darkColor.withOpacity(0.26),
+            color: colors.darkColor.withOpacity(0.55),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
@@ -32,13 +34,11 @@ class HeroBanner extends StatelessWidget {
                 Text(
                   'Looking forward to a career in software!',
                   style: Responsive.isDesktop(context)
-                      ? Theme.of(context).textTheme.headline3!.copyWith(
+                      ? Theme.of(context).textTheme.headlineLarge!.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
                           )
-                      : Theme.of(context).textTheme.headline5!.copyWith(
+                      : Theme.of(context).textTheme.headlineMedium!.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
                           ),
                 ),
                 if (Responsive.isMobileLarge(context))
@@ -49,17 +49,15 @@ class HeroBanner extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: TextButton.styleFrom(
+                      foregroundColor: colors.darkColor,
+                      backgroundColor: colors.primaryColor,
                       padding: const EdgeInsets.symmetric(
                         horizontal: defaultPadding * 2,
                         vertical: defaultPadding,
                       ),
-                      backgroundColor: const PortfolioColors().primaryColor,
                     ),
-                    child: Text(
+                    child: const Text(
                       'Take a Guided Tour!',
-                      style: TextStyle(
-                        color: const PortfolioColors().darkColor,
-                      ),
                     ),
                   ),
               ],
@@ -127,22 +125,21 @@ class AnimatedText extends StatelessWidget {
   }
 }
 
-class FlutterCodedText extends StatelessWidget {
+class FlutterCodedText extends ConsumerWidget {
   const FlutterCodedText({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Text.rich(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return const Text.rich(
       TextSpan(
         text: '<',
         children: [
           TextSpan(
             text: 'flutter',
-            style: TextStyle(color: const PortfolioColors().primaryColor),
           ),
-          const TextSpan(text: '>'),
+          TextSpan(text: '>'),
         ],
       ),
     );

@@ -19,11 +19,14 @@ class ProjectsSection extends StatelessWidget {
         children: [
           Text(
             'Portfolio',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context)
+                .textTheme
+                .headline6!
+                .copyWith(color: Colors.white),
           ),
           const SizedBox(height: defaultPadding / 3),
           Text(
-          // ignore: lines_longer_than_80_chars
+            // ignore: lines_longer_than_80_chars
             'Projects showcasing technical proficiencies your company can leverage',
             style: Theme.of(context).textTheme.subtitle2,
           ),
@@ -51,6 +54,7 @@ class StaggeredProjectGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MasonryGridView.count(
+      physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: defaultPadding,
