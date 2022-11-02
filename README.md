@@ -1,5 +1,15 @@
-# corey_portfolio
+# Portfolio App 💼
 
-Flutter based applications to showcase portfolio applications.
+### Flutter Web Showcase 🔥
 
-Responsive based layout for use in Flutter web.
+Created an application to showcase portfolio projects.
+The learning goal was to design for Flutter Web and practice responsive layouts
+
+---
+
+#### Learnings 🎯
+
+1. Created responsive breakpoints for various sized web-browsers
+2. Utilized flutter_staggered_grid_view package for dynamic sized list views
+3. Included assets for download (resume)
+
