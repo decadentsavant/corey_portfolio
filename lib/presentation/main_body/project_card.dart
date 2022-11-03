@@ -49,9 +49,7 @@ class ProjectCard extends StatelessWidget {
           TextButton(
             onPressed: () => context.goNamed(
               AppRoute.project.name,
-              params: {
-                'projectId': project.url,
-              },
+              params: {'projectId': project.url},
             ),
             child: const Text(
               'Read More >>',
