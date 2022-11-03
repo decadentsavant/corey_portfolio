@@ -1,8 +1,12 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 class Project {
-  Project({this.title, this.description, this.url});
-  final String? title, description, url;
+  Project({
+    required this.title,
+    required this.description,
+    required this.url,
+  });
+  final String title, description, url;
 }
 
 List<Project> portfolioProjects = [
@@ -34,7 +38,7 @@ List<Project> portfolioProjects = [
       title: 'Coin Watcher\n- Crypto App',
       description:
           'In the first part of our complete e-commerce app, we show you how you can create a nice clean onboarding screen for your e-commerce app that can run both Andriod and iOS devices because it builds with flutter. Then on the second episode, we build a Sign in, Forgot Password screen with a custom error indicator.',
-      url: 'coinWatcher'),
+      url: 'coinWatcher',),
   Project(
     title: 'Flutter Riverpod Snippets\n- VSCode Extension',
     description:

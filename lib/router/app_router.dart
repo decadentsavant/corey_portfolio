@@ -1,4 +1,5 @@
 import 'package:corey_portfolio/presentation/home_screen.dart';
+import 'package:corey_portfolio/presentation/project_page/project_page.dart';
 import 'package:go_router/go_router.dart';
 
 enum AppRoute {
@@ -20,8 +21,8 @@ final goRouter = GoRouter(
             path: 'project/:projectId',
             name: AppRoute.project.name,
             builder: (context, state) {
-              final projectId = state.params['projectId'];
-              return  
+              final projectId = state.params['projectId']!;
+              return ProjectPage(projectId: projectId); 
             },
           )
         ],),

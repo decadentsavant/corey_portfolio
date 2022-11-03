@@ -1,7 +1,9 @@
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/project.dart';
-import 'package:corey_portfolio/presentation/project_page/portfolio_page.dart';
+import 'package:corey_portfolio/presentation/project_page/project_page.dart';
+import 'package:corey_portfolio/router/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({
@@ -30,7 +32,7 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            project.title!,
+            project.title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.subtitle2!.copyWith(
@@ -39,14 +41,19 @@ class ProjectCard extends StatelessWidget {
           ),
           const SizedBox(height: defaultPadding),
           Text(
-            project.description!,
+            project.description,
             maxLines: Responsive.isMobileLarge(context) ? 3 : 4,
             overflow: TextOverflow.ellipsis,
             style: const TextStyle(height: 1.5),
           ),
           const SizedBox(height: defaultPadding),
           TextButton(
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const PortfolioPage(),),),
+            onPressed: () => context.goNamed(
+              AppRoute.project.name,
+              params: {
+                'projectId': project.url,
+              },
+            ),
             child: const Text(
               'Read More >>',
               style: TextStyle(color: PortfolioColors.primaryColor),
