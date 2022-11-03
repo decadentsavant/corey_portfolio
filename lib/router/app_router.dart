@@ -7,11 +7,23 @@ enum AppRoute {
   publications,
 }
 
-final goRouter =
-    GoRouter(initialLocation: '/', debugLogDiagnostics: true, routes: [
-  GoRoute(
-    path: '/',
-    name: AppRoute.home.name,
-    builder: (context, state) => const HomeScreen(),
-  ),
-]);
+final goRouter = GoRouter(
+  initialLocation: '/',
+  debugLogDiagnostics: true,
+  routes: [
+    GoRoute(
+        path: '/',
+        name: AppRoute.home.name,
+        builder: (context, state) => const HomeScreen(),
+        routes: [
+          GoRoute(
+            path: 'project/:projectId',
+            name: AppRoute.project.name,
+            builder: (context, state) {
+              final projectId = state.params['projectId'];
+              return  
+            },
+          )
+        ],),
+  ],
+);
