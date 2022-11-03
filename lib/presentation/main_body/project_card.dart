@@ -1,6 +1,5 @@
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/project.dart';
-import 'package:corey_portfolio/presentation/project_page/project_page.dart';
 import 'package:corey_portfolio/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
