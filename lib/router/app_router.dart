@@ -24,6 +24,7 @@ final goRouter = GoRouter(
           builder: (context, state) =>
               ProjectPage(projectId: state.params['projectId']!),
           pageBuilder: (context, state) => CustomTransitionPage(
+            key: state.pageKey,
             child: ProjectPage(projectId: state.params['projectId']!),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) =>
