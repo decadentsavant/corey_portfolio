@@ -30,14 +30,8 @@ class ProjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            project.title,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                  color: Colors.white,
-                ),
-          ),
+          _Titles(title: project.title),
+          _Titles(title: '- ${project.subtitle}'),
           const SizedBox(height: defaultPadding),
           Text(
             project.description,
@@ -49,7 +43,9 @@ class ProjectCard extends StatelessWidget {
           TextButton(
             onPressed: () => context.goNamed(
               AppRoute.project.name,
-              params: {'projectId': project.url},
+              params: {
+                'projectId': project.url,
+              },
             ),
             child: const Text(
               'Read More >>',
@@ -58,6 +54,26 @@ class ProjectCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _Titles extends StatelessWidget {
+  const _Titles({
+    required this.title,
+  });
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+            color: Colors.white,
+          ),
     );
   }
 }

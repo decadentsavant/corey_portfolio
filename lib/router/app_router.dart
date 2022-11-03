@@ -21,15 +21,17 @@ final goRouter = GoRouter(
         GoRoute(
           path: 'project/:projectId',
           name: AppRoute.project.name,
-          builder: (context, state) =>
-              ProjectPage(projectId: state.params['projectId']!),
-          pageBuilder: (context, state) => CustomTransitionPage(
-            key: state.pageKey,
-            child: ProjectPage(projectId: state.params['projectId']!),
-            transitionsBuilder:
-                (context, animation, secondaryAnimation, child) =>
-                    FadeTransition(opacity: animation, child: child),
-          ),
+          // builder: (context, state) =>
+          //     ProjectPage(projectIndex: state.params['projectIndex']!),
+          pageBuilder: (context, state) {
+            return CustomTransitionPage(
+              key: state.pageKey,
+              child: const ProjectPage(),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) =>
+                      FadeTransition(opacity: animation, child: child),
+            );
+          },
         ),
       ],
     ),
