@@ -1,7 +1,6 @@
-import 'package:corey_portfolio/global_layout/responsive.dart';
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/project.dart';
-import 'package:corey_portfolio/screens/home/home_screen_sections/projects/project_card.dart';
+import 'package:corey_portfolio/presentation/main_body/project_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -34,8 +33,8 @@ class ProjectsSection extends StatelessWidget {
           const Responsive(
             mobile: StaggeredProjectGridView(crossAxisCount: 1),
             mobileLarge: StaggeredProjectGridView(crossAxisCount: 2),
-            tablet: StaggeredProjectGridView(crossAxisCount: 4),
-            desktop: StaggeredProjectGridView(crossAxisCount: 4),
+            tablet: StaggeredProjectGridView(crossAxisCount: 3),
+            desktop: StaggeredProjectGridView(crossAxisCount: 3),
           ),
         ],
       ),
@@ -59,9 +58,9 @@ class StaggeredProjectGridView extends StatelessWidget {
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: defaultPadding,
       crossAxisSpacing: defaultPadding,
-      itemCount: 4,
+      itemCount: 6,
       itemBuilder: (context, index) => ProjectCard(
-        project: demoProjects[index],
+        project: portfolioProjects[index],
       ),
     );
   }

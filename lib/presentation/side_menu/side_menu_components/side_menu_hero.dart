@@ -1,19 +1,17 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
+import 'package:corey_portfolio/constants/portfolio_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SideMenuHero extends ConsumerWidget {
+class SideMenuHero extends StatelessWidget {
   const SideMenuHero({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final colors = ref.watch(portfolioColorsProvider);
+  Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.23,
       child: ColoredBox(
-        color: colors.darkColor.withAlpha(50),
+        color: PortfolioColors.darkColor.withAlpha(50),
         child: Column(
           children: [
             const Spacer(flex: 2),

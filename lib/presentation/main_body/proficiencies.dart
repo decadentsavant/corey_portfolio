@@ -1,10 +1,7 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
-import 'package:corey_portfolio/global_layout/responsive.dart';
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/proficiencies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Skills extends StatelessWidget {
   const Skills({super.key});
@@ -58,7 +55,7 @@ class StaggeredProficienciesGridView extends StatelessWidget {
   }
 }
 
-class ProficiencyItem extends ConsumerWidget {
+class ProficiencyItem extends StatelessWidget {
   const ProficiencyItem({
     super.key,
     required this.proficiencyData,
@@ -67,15 +64,14 @@ class ProficiencyItem extends ConsumerWidget {
   final ProficiencyData proficiencyData;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final colors = ref.watch(portfolioColorsProvider);
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: defaultPadding / 2),
       child: Row(
         children: [
           Icon(
             Icons.hotel_class,
-            color: colors.primaryColor,
+            color: PortfolioColors.primaryColor,
             size: IconTheme.of(context).size! * .8,
           ),
           const SizedBox(width: defaultPadding / 2),

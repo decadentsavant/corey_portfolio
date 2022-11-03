@@ -1,11 +1,9 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
-import 'package:corey_portfolio/global_layout/responsive.dart';
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/project.dart';
+import 'package:corey_portfolio/presentation/portfolio_page/portfolio_page.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ProjectCard extends ConsumerWidget {
+class ProjectCard extends StatelessWidget {
   const ProjectCard({
     super.key,
     required this.project,
@@ -14,17 +12,16 @@ class ProjectCard extends ConsumerWidget {
   final Project project;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final colors = ref.watch(portfolioColorsProvider);
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: colors.darkColor,
+        color: PortfolioColors.bgColor,
         boxShadow: [
           BoxShadow(
             // spreadRadius: 0,
             blurRadius: 8,
             offset: const Offset(5, 3),
-            color: colors.primaryColor.withOpacity(.2),
+            color: PortfolioColors.primaryColor.withOpacity(.2),
           )
         ],
       ),
@@ -49,10 +46,10 @@ class ProjectCard extends ConsumerWidget {
           ),
           const SizedBox(height: defaultPadding),
           TextButton(
-            onPressed: () {},
-            child: Text(
+            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const PortfolioPage(),),),
+            child: const Text(
               'Read More >>',
-              style: TextStyle(color: colors.primaryColor),
+              style: TextStyle(color: PortfolioColors.primaryColor),
             ),
           ),
         ],

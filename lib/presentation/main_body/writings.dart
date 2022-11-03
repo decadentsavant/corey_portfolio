@@ -1,6 +1,6 @@
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
-import 'package:corey_portfolio/models/musings.dart';
-import 'package:corey_portfolio/screens/home/home_screen_sections/publications/writing_card.dart';
+import 'package:corey_portfolio/constants/constants.dart';
+import 'package:corey_portfolio/models/publications.dart';
+import 'package:corey_portfolio/presentation/main_body/writing_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

@@ -1,4 +1,4 @@
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class ContactInformation extends StatelessWidget {
@@ -12,14 +12,15 @@ class ContactInformation extends StatelessWidget {
           padding: EdgeInsets.only(bottom: defaultPadding / 2),
           child: ContactCard(
             title: 'Locations',
-            text: 'Dallas - Fort Worth & New York City',
+          // ignore: lines_longer_than_80_chars
+            text: 'Currently have residences in both Dallas & New York City. Open to relocation.',
           ),
         ),
         Padding(
           padding: EdgeInsets.only(bottom: defaultPadding / 2),
           child: ContactCard(
             title: 'phone',
-            text: '214-699-9714',
+            text: '+1 214-699-9714',
           ),
         ),
         ContactCard(

@@ -1,10 +1,8 @@
-import 'package:corey_portfolio/global_layout/portfolio_colors.dart';
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
+import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/models.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class MusingsCard extends ConsumerWidget {
+class MusingsCard extends StatelessWidget {
   const MusingsCard({
     super.key,
     required this.musings,
@@ -13,10 +11,9 @@ class MusingsCard extends ConsumerWidget {
   final WritingData musings;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final colors = ref.watch(portfolioColorsProvider);
+  Widget build(BuildContext context) {
     return Container(
-      color: colors.darkColor,
+      color:  PortfolioColors.darkColor,
       width: 400,
       padding: const EdgeInsets.all(defaultPadding),
       child: Column(

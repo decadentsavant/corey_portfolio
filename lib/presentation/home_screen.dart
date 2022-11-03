@@ -1,11 +1,30 @@
-import 'package:corey_portfolio/global_layout/responsive.dart';
-import 'package:corey_portfolio/global_layout/ui_constants.dart';
-import 'package:corey_portfolio/screens/side_menu/side_menu_screen.dart';
+import 'package:corey_portfolio/constants/constants.dart';
+import 'package:corey_portfolio/presentation/main_body/hero_banner.dart';
+import 'package:corey_portfolio/presentation/main_body/my_projects.dart';
+import 'package:corey_portfolio/presentation/main_body/proficiencies.dart';
+import 'package:corey_portfolio/presentation/main_body/writings.dart';
+import 'package:corey_portfolio/presentation/side_menu/side_menu_screen.dart';
 import 'package:flutter/material.dart';
 
-class HomeSkeleton extends StatelessWidget {
-  const HomeSkeleton({super.key, required this.children});
 
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const _Skeleton(
+      children: [
+        HeroBanner(),
+        ProjectsSection(),
+        Skills(),
+        WritingsSection(),
+      ],
+    );
+  }
+
+}
+class _Skeleton extends StatelessWidget {
+  const _Skeleton({required this.children});
   final List<Widget> children;
 
   @override
@@ -14,6 +33,9 @@ class HomeSkeleton extends StatelessWidget {
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
+              title: const Text('Corey Stewart - Portfolio'),
+              centerTitle: true,
+              backgroundColor: PortfolioColors.bgColor,
               leading: Builder(
                 builder: (context) => IconButton(
                   onPressed: () {
