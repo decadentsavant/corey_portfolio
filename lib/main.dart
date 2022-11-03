@@ -1,5 +1,4 @@
 import 'package:corey_portfolio/constants/portfolio_colors.dart';
-import 'package:corey_portfolio/presentation/home_screen.dart';
 import 'package:corey_portfolio/router/app_router.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
