@@ -1,11 +1,10 @@
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/presentation/main_body/hero_banner.dart';
-import 'package:corey_portfolio/presentation/main_body/my_projects.dart';
-import 'package:corey_portfolio/presentation/main_body/proficiencies.dart';
-import 'package:corey_portfolio/presentation/main_body/writings.dart';
+import 'package:corey_portfolio/presentation/main_body/proficiencies_section.dart';
+import 'package:corey_portfolio/presentation/main_body/projects_section.dart';
+import 'package:corey_portfolio/presentation/main_body/publications_section.dart';
 import 'package:corey_portfolio/presentation/side_menu/side_menu_screen.dart';
 import 'package:flutter/material.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,13 +15,13 @@ class HomeScreen extends StatelessWidget {
       children: [
         HeroBanner(),
         ProjectsSection(),
-        Skills(),
-        WritingsSection(),
+        ProficienciesSection(),
+        PublicationsSections(),
       ],
     );
   }
-
 }
+
 class _Skeleton extends StatelessWidget {
   const _Skeleton({required this.children});
   final List<Widget> children;
