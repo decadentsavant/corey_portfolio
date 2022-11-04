@@ -1,4 +1,5 @@
 import 'package:corey_portfolio/constants/portfolio_colors.dart';
+import 'package:corey_portfolio/presentation/error_screens/default_error.dart';
 import 'package:corey_portfolio/router/app_router.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,13 @@ import 'package:google_fonts/google_fonts.dart';
 void main() {
   usePathUrlStrategy();
   runApp(const MyApp());
+
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+  };
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return DefaultErrorWidget(details);
+  };
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +46,9 @@ class MyApp extends StatelessWidget {
         canvasColor: PortfolioColors.bgColor,
         // text Colors
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-            .apply(bodyColor: PortfolioColors.bodyTextColor,)
+            .apply(
+              bodyColor: PortfolioColors.bodyTextColor,
+            )
             .copyWith(
               headlineLarge: const TextStyle(
                 color: Colors.white,
