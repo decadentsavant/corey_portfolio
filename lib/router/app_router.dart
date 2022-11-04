@@ -1,3 +1,4 @@
+import 'package:corey_portfolio/presentation/error_screens/router_error.dart';
 import 'package:corey_portfolio/presentation/home_screen.dart';
 import 'package:corey_portfolio/presentation/project_page/project_page.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ final goRouter = GoRouter(
           pageBuilder: (context, state) {
             return CustomTransitionPage(
               key: state.pageKey,
-              child: const ProjectPage(),
+              child: ProjectPage(state.params['projectId']!),
               transitionsBuilder:
                   (context, animation, secondaryAnimation, child) =>
                       FadeTransition(opacity: animation, child: child),
@@ -36,4 +37,5 @@ final goRouter = GoRouter(
       ],
     ),
   ],
+  errorBuilder: (context, state) => const RouterError(),
 );
