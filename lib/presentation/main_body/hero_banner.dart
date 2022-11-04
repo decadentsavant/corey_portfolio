@@ -13,8 +13,8 @@ class HeroBanner extends StatelessWidget{
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'assets/images/madeira.jpg',
+          Image.network(
+            'gs://coreysexquisiteportfolio.appspot.com/Madeira.jpg',
             fit: BoxFit.cover,
           ),
           ColoredBox(
