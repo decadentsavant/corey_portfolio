@@ -29,8 +29,8 @@ Most applications I've developed have been designed with a 'mobile-first' apprao
    * Dynmaic resizing of columns, drawer, and app bar
    * Implementing correct scrolling behavior for various drag devices (mouse, trackpad, stylus, etc.)
    * URL based navigation
+   * Firebase Storage & Hosting products (I've used the Firestore and Authentication numerous times)
 
-I've used Firebase's Authentication and Firestore products on numerous occassions. For this project I wanted to use the Hosting product. Using the Firebase CLI, I deployed to their hosting platform from which you are currently accessing the site.
  ''',
     url: 'responsivePortfolio',
     gitHubLocation: 'https://github.com/decadentsavant/corey_portfolio',
@@ -96,6 +96,7 @@ At any rate, non-exhaustive highlights include:
     * json_serializable & build_runner (creation of entries model)
     * url_launcher (opening external links)
     *very_good_analysiss (personal preference to utilize strongly opinionated lints as a learning tool)
+    
 ''',
     url: 'mostLearnedMobileApp',
     gitHubLocation: 'https://github.com/decadentsavant/ml_app',
