@@ -1,5 +1,7 @@
 # Portfolio App 💼
 
+(NOTE: Being my first backend, I overly documented it in places for learning/reference purposes)
+
 ### Flutter Web Showcase 🔥
 
 Created an application to showcase portfolio projects.
