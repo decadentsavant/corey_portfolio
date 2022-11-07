@@ -7,8 +7,10 @@ class Project {
     required this.description,
     required this.url,
     required this.gitHubLocation,
+    required this.imageLocation,
   });
   final String title, subtitle, description, url, gitHubLocation;
+  final List<String> imageLocation;
 }
 
 List<Project> portfolioProjects = [
@@ -29,11 +31,12 @@ Most applications I've developed have been designed with a 'mobile-first' apprao
    * Dynmaic resizing of columns, drawer, and app bar
    * Implementing correct scrolling behavior for various drag devices (mouse, trackpad, stylus, etc.)
    * URL based navigation
-   * Firebase Storage & Hosting products (I've used the Firestore and Authentication numerous times)
+   * Firebase Hosting product (Previously used the Firestore and Authentication numerous times)
 
  ''',
     url: 'responsivePortfolio',
     gitHubLocation: 'https://github.com/decadentsavant/corey_portfolio',
+    imageLocation: [''],
   ),
   Project(
     title: 'Most Learned',
@@ -61,7 +64,6 @@ At any rate, non-exhaustive highlights include:
 
 1. VSCode, Android Studio, Xcode
     * various VSCode extensions
-    * Vim bindings
 
 2. Git
     * primarily using Git and GitHub CLIs
@@ -100,6 +102,7 @@ At any rate, non-exhaustive highlights include:
 ''',
     url: 'mostLearnedMobileApp',
     gitHubLocation: 'https://github.com/decadentsavant/ml_app',
+    imageLocation: [''],
   ),
   Project(
     title: 'Back-End Application',
@@ -118,6 +121,7 @@ This quick and dirty back end applications was created with the goal of learning
 ''',
     url: 'backEndDartFrog',
     gitHubLocation: 'https://github.com/decadentsavant/dart_frog_playground_firebase',
+    imageLocation: ['assets/images/dfPostmanLogin.png','assets/images/dfMdUser.png', 'assets/images/dfPostmanMeal.png', 'assets/images/dfMdMeal.png', 'assets/images/dfVsCode.png'],
   ),
   Project(
     title: 'Blockchain Chat',
@@ -138,9 +142,10 @@ This project admittedly pushed my boundaries outside of Flutter. That being said
 ''',
     url: 'blockchainChat',
     gitHubLocation: 'https://github.com/decadentsavant/flutter_dapp',
+    imageLocation: [''],
   ),
   Project(
-      title: 'Coin Watcher',
+      title: 'Crypto Watcher',
       subtitle: 'Crypto App',
       description: '''
 This application utilizes bloc, fetches data from a remote API, and displays the current prices of various coins.
@@ -152,8 +157,9 @@ This application utilizes bloc, fetches data from a remote API, and displays the
 * Managing async events via try/catch and handling 'onData', 'onError', and 'loading' states
 
 ''',
-      url: 'coinWatcher',
+      url: 'cryptoWatcher',
     gitHubLocation: 'https://github.com/decadentsavant/crypto_app',
+    imageLocation: ['assets/images/coin_watcher_mockup.png'],
       ),
   Project(
     title: 'Flutter Riverpod Snippets',
@@ -178,5 +184,6 @@ When Dart 2.17 came out it introduced the super shorthand syntax. I noticed the 
 ''',
     url: 'riverpodSnippets',
     gitHubLocation: 'https://github.com/RobertBrunhage/flutter-riverpod-snippets',
+    imageLocation: [''],
   ),
 ];

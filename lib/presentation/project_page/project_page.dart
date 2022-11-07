@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
+import 'package:card_swiper/card_swiper.dart';
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/models/project.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,7 @@ class ProjectPage extends StatelessWidget {
                       const SizedBox(
                         height: defaultPadding,
                       ),
-                      const _ProjectImage(),
+                      _ProjectImage(project: project),
                       const SizedBox(
                         height: defaultPadding,
                       ),
@@ -152,18 +153,28 @@ class _ProjectTitle extends StatelessWidget {
 }
 
 class _ProjectImage extends StatelessWidget {
-  const _ProjectImage();
-
+  const _ProjectImage({required this.project});
+  final Project project;
   @override
   Widget build(BuildContext context) {
     return Align(
       child: SizedBox(
-        height: 500,
-        child: Image.asset(
-          'assets/images/headshot_small.png',
+        height: 700,
+        // child: Image.asset(
+        //   project.imageLocation,
+        // ),
+        child: Swiper(
+          autoplay: true,
+          autoplayDelay: 5000,
+          itemCount: project.imageLocation.length,
+          viewportFraction: .8,
+          scale: .9,
+          itemBuilder: (context, int index) {
+            return Image.asset(project.imageLocation[index]);
+          },
+          ),
         ),
-      ),
-    );
+      );
   }
 }
 
