@@ -97,12 +97,12 @@ At any rate, non-exhaustive highlights include:
     * equitable (utilized extensively in Bloc)
     * json_serializable & build_runner (creation of entries model)
     * url_launcher (opening external links)
-    *very_good_analysiss (personal preference to utilize strongly opinionated lints as a learning tool)
+    *very_good_analysis (a personal preference to utilize strongly opinionated lints as a learning tool)
     
 ''',
     url: 'mostLearnedMobileApp',
     gitHubLocation: 'https://github.com/decadentsavant/ml_app',
-    imageLocation: [''],
+    imageLocation: ['assets/images/mlTodaysReview.png', 'assets/images/mlAllEntries.png', 'assets/images/mlStats.png', 'assets/images/mlCreateEntry.png'],
   ),
   Project(
     title: 'Back-End Application',
@@ -112,7 +112,7 @@ This quick and dirty back end applications was created with the goal of learning
 
 --Primary Learnings--
 
-* Exposed to Postman for monitoring/troubleshooting server traffic
+* Sent/Received data through Postman to monitor/troubleshoot server traffic
 * Utilized Very Good Venture's back end framework, Dart Frog
 * Learned more about status codes, query parameters, static/dynamic routes, etc.
 * Used JWT auth with middleware
