@@ -36,7 +36,7 @@ Most applications I've developed have been designed with a 'mobile-first' apprao
  ''',
     url: 'responsivePortfolio',
     gitHubLocation: 'https://github.com/decadentsavant/corey_portfolio',
-    imageLocation: [''],
+    imageLocation: ['assets/images/portfolio.jpg'],
   ),
   Project(
     title: 'Most Learned',
@@ -108,7 +108,7 @@ At any rate, non-exhaustive highlights include:
     title: 'Back-End Application',
     subtitle: 'Dart Frog',
     description: '''
-This quick and dirty back end applications was created with the goal of learning more about the underpinnings of services and REST APIs.
+This back end application was created with the goal of learning more about the underpinnings of services and REST APIs.
 
 --Primary Learnings--
 
@@ -142,7 +142,7 @@ This project admittedly pushed my boundaries outside of Flutter. That being said
 ''',
     url: 'blockchainChat',
     gitHubLocation: 'https://github.com/decadentsavant/flutter_dapp',
-    imageLocation: [''],
+    imageLocation: ['assets/images/dAppFeed.jpg', 'assets/images/dAppMessage.jpg', 'assets/images/dAppBlocks.jpg', 'assets/images/dAppTransactions.jpg'],
   ),
   Project(
       title: 'Crypto Watcher',
@@ -184,6 +184,6 @@ When Dart 2.17 came out it introduced the super shorthand syntax. I noticed the 
 ''',
     url: 'riverpodSnippets',
     gitHubLocation: 'https://github.com/RobertBrunhage/flutter-riverpod-snippets',
-    imageLocation: [''],
+    imageLocation: ['assets/images/riverpodSnippets.jpg'],
   ),
 ];

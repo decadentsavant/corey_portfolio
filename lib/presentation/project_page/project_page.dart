@@ -164,10 +164,9 @@ class _ProjectImage extends StatelessWidget {
         //   project.imageLocation,
         // ),
         child: Swiper(
-          autoplay: true,
+          autoplay: project.imageLocation.length > 1,
           autoplayDelay: 5000,
           itemCount: project.imageLocation.length,
-          viewportFraction: .8,
           scale: .9,
           itemBuilder: (context, int index) {
             return Image.asset(project.imageLocation[index]);
