@@ -1,7 +1,9 @@
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class HeroBanner extends StatelessWidget{
+class HeroBanner extends StatelessWidget {
   const HeroBanner({
     super.key,
   });
@@ -42,10 +44,18 @@ class HeroBanner extends StatelessWidget{
                 const SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      final mailtoLink = Mailto(
+                        to: [''],
+                        cc: ['corey.stewart@mostlearned.com'],
+                        subject: "Developer's portfolio",
+                        body: "Check out this developer's portfolio: https://coreysexquisiteportfolio.web.app/",
+                      );
+                      await launch('$mailtoLink');
+                    },
                     style: TextButton.styleFrom(
-                      foregroundColor:  PortfolioColors.darkColor,
-                      backgroundColor:  PortfolioColors.primaryColor,
+                      foregroundColor: PortfolioColors.darkColor,
+                      backgroundColor: PortfolioColors.primaryColor,
                       padding: const EdgeInsets.symmetric(
                         horizontal: defaultPadding * 2,
                         vertical: defaultPadding,
