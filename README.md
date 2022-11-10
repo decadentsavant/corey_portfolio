@@ -1,11 +1,10 @@
 # Portfolio App 💼
 
-(NOTE: Being my first backend, I overly documented it in places for learning/reference purposes)
+This site showcases numerous projects, documents goals and learnings for each project, and highlights proficiencies with various tools and technologies. 
 
 ### Flutter Web Showcase 🔥
 
-Created an application to showcase portfolio projects.
-The learning goal was to design for Flutter Web and practice responsive layouts.
+The learning goal for this poject was to design for Flutter Web and practice responsive layouts.
 
 ---
 
