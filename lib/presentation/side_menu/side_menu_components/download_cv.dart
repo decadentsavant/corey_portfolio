@@ -13,7 +13,7 @@ class DownloadCV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => _downloadFile('/lib/global_components/skills.dart'),
+      onPressed: () => _downloadFile('/assets/docs/CoreyStewartResume.docx'),
       child: FittedBox(
         child: Row(
           children: [
@@ -32,5 +32,6 @@ class DownloadCV extends StatelessWidget {
 void _downloadFile(String url) {
   html.AnchorElement(href: url)
     ..download = url
+    ..setAttribute('download', 'CoreyStewartResume.docx')
     ..click();
 }

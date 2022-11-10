@@ -14,8 +14,8 @@ class HomeScreen extends StatelessWidget {
     return const _Skeleton(
       children: [
         HeroBanner(),
-        ProjectsSection(),
         ProficienciesSection(),
+        ProjectsSection(),
         // TODO(Corey): Write some things!
         // Then uncomment the line below and update publications model
         // PublicationsSections(),
