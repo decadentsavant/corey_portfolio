@@ -2,7 +2,7 @@ import 'package:corey_portfolio/constants/constants.dart';
 import 'package:corey_portfolio/presentation/main_body/hero_banner.dart';
 import 'package:corey_portfolio/presentation/main_body/proficiencies_section.dart';
 import 'package:corey_portfolio/presentation/main_body/projects_section.dart';
-import 'package:corey_portfolio/presentation/main_body/publications_section.dart';
+// import 'package:corey_portfolio/presentation/main_body/publications_section.dart';
 import 'package:corey_portfolio/presentation/side_menu/side_menu_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,9 @@ class HomeScreen extends StatelessWidget {
         HeroBanner(),
         ProjectsSection(),
         ProficienciesSection(),
-        PublicationsSections(),
+        // TODO(Corey): Write some things!
+        // Then uncomment the line below and update publications model
+        // PublicationsSections(),
       ],
     );
   }

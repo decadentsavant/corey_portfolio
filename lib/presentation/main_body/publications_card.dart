@@ -8,7 +8,7 @@ class PublicationsCard extends StatelessWidget {
     required this.musings,
   });
 
-  final WritingData musings;
+  final Publication musings;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,6 @@ class PublicationsCard extends StatelessWidget {
                   color: Colors.white,
                 ),
           ),
-          Text(musings.source!),
           const SizedBox(height: defaultPadding),
           Text(
             musings.text!,
