@@ -18,6 +18,7 @@ class ProjectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
+    final isMobile = Responsive.isMobile(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -37,11 +38,11 @@ class ProjectPage extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      const SizedBox(
+                      if(!isMobile) const SizedBox(
                         height: defaultPadding,
                       ),
                       _ProjectImage(project: project),
-                      const SizedBox(
+                     if (!isMobile) const SizedBox(
                         height: defaultPadding,
                       ),
                       _ProjectTitle(project: project),
