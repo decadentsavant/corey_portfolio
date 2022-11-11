@@ -26,7 +26,7 @@ class ProjectsSection extends StatelessWidget {
           const SizedBox(height: defaultPadding / 3),
           Text(
             // ignore: lines_longer_than_80_chars
-            'Projects showcasing technical proficiencies your company can leverage',
+            'Projects showcasing technical proficiencies that your company can leverage.',
             style: Theme.of(context).textTheme.subtitle2,
           ),
           const SizedBox(height: defaultPadding),

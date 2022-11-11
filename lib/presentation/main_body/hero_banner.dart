@@ -1,6 +1,5 @@
 import 'package:corey_portfolio/constants/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HeroBanner extends StatelessWidget {
@@ -44,15 +43,7 @@ class HeroBanner extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
-                    onPressed: () async {
-                      final mailtoLink = Mailto(
-                        to: [''],
-                        cc: ['corey.stewart@mostlearned.com'],
-                        subject: "Developer's portfolio",
-                        body: "Check out this developer's portfolio: https://coreysexquisiteportfolio.web.app/",
-                      );
-                      await launch('$mailtoLink');
-                    },
+                    onPressed: _sendEmail,
                     style: TextButton.styleFrom(
                       foregroundColor: PortfolioColors.darkColor,
                       backgroundColor: PortfolioColors.primaryColor,
@@ -62,7 +53,7 @@ class HeroBanner extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      'Email link to Hiring Manager',
+                      'Share Link with Hiring Manager',
                     ),
                   ),
               ],
@@ -72,4 +63,27 @@ class HeroBanner extends StatelessWidget {
       ),
     );
   }
+}
+
+void _sendEmail() {
+  String? encodeQueryParameters(Map<String, String> params) {
+    return params.entries
+        .map(
+          (e) =>
+              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}',
+      )
+        .join('&');
+  }
+
+  final emailLaunchUri = Uri(
+    scheme: 'mailto',
+    path: '',
+    query: encodeQueryParameters(<String, String>{
+      'cc': 'corey.stewart@mostlearned.com',
+      'subject': "Developer's Portfolio",
+      'body':
+          'This developer looks great! Please reach out to him: \n\nhttps://coreysexquisiteportfolio.web.app/',
+    }),
+  );
+  launchUrl(emailLaunchUri);
 }

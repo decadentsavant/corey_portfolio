@@ -16,7 +16,7 @@ class Project {
 List<Project> portfolioProjects = [
   Project(
     title: 'Responsive Web Portfolio',
-    subtitle: 'This website!',
+    subtitle: 'This Website!',
     description:'''
 The site showcases numerous projects, documents goals and learnings for each project, and highlights proficiencies with various tools and technologies.
 
@@ -148,7 +148,7 @@ This project admittedly pushed my boundaries outside of Flutter. That being said
       title: 'Crypto Watcher',
       subtitle: 'Crypto App',
       description: '''
-This application utilizes bloc, fetches data from a remote API, and displays the current prices of various coins.
+This app utilizes bloc, fetches data from a remote API, and displays the current prices of various coins.
 
 -- Primary Learnings --
 
@@ -165,6 +165,8 @@ This application utilizes bloc, fetches data from a remote API, and displays the
     title: 'Flutter Riverpod Snippets',
     subtitle: 'VSCode Extension',
     description: '''
+This repo highlights my first open source contribution.
+
 Contributing to open source is a common suggestion to new developers. 
 
 Obstacles to getting started include: 

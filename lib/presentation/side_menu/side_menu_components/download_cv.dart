@@ -13,7 +13,7 @@ class DownloadCV extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => _downloadFile('/assets/docs/CoreyStewartResume.docx'),
+      onPressed: () => html.window.open('https://firebasestorage.googleapis.com/v0/b/coreysexquisiteportfolio.appspot.com/o/CoreyStewartResume.pdf?alt=media&token=007dbe88-1f5d-4037-bcc8-cfba5bde3f3b', '_blank'),
       child: FittedBox(
         child: Row(
           children: [
@@ -27,11 +27,4 @@ class DownloadCV extends StatelessWidget {
       ),
     );
   }
-}
-
-void _downloadFile(String url) {
-  html.AnchorElement(href: url)
-    ..download = url
-    ..setAttribute('download', 'CoreyStewartResume.docx')
-    ..click();
 }
