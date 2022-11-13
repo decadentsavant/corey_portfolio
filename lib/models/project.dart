@@ -32,6 +32,7 @@ Most applications I've developed have been designed with a 'mobile-first' apprao
    * Implementing correct scrolling behavior for various drag devices (mouse, trackpad, stylus, etc.)
    * URL based navigation
    * Firebase Hosting product (Previously used the Firestore and Authentication numerous times)
+   * Firebase Analytics
 
  ''',
     url: 'responsivePortfolio',
