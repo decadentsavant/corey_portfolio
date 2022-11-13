@@ -1,6 +1,7 @@
 import 'package:corey_portfolio/presentation/error_screens/router_error.dart';
 import 'package:corey_portfolio/presentation/home_screen.dart';
 import 'package:corey_portfolio/presentation/project_page/project_page.dart';
+import 'package:corey_portfolio/services/analytics_service.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,6 +12,9 @@ enum AppRoute {
 }
 
 final goRouter = GoRouter(
+  observers: [
+    AnalyticsService.instance.getAnalyticsObserver(),
+  ],
   initialLocation: '/',
   debugLogDiagnostics: true,
   routes: [

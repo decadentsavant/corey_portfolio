@@ -1,13 +1,22 @@
 import 'package:corey_portfolio/constants/portfolio_colors.dart';
+import 'package:corey_portfolio/firebase_options.dart';
 import 'package:corey_portfolio/presentation/error_screens/default_error.dart';
 import 'package:corey_portfolio/router/app_router.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   usePathUrlStrategy();
+  
+
   runApp(const MyApp());
 
   FlutterError.onError = (FlutterErrorDetails details) {
