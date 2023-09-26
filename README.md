@@ -10,7 +10,7 @@ This site showcases numerous projects, documents goals and learnings for each pr
 
 The learning goal for this poject was to design for Flutter Web and practice responsive layouts.
 
-https://coreysexquisiteportfolio.firebaseapp.com/
+https://coreysexquisiteportfolio.firebaseapp.com/<br>
 ("corey's exquisite!" sexual innuendo was google's fault when it recommended names that weren't already taken. I didn't even catch it...someone else did 😂)
 
 ---
