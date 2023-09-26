@@ -1,6 +1,6 @@
 # Updated porfolio site at [https://stew.boo](https://stew.boo)
 
-I've learned a ton since this one...
+I've learned a ton since this old project...
 
 ## Portfolio App  💼
 
